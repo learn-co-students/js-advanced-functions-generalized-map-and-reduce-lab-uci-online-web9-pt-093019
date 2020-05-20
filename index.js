@@ -9,13 +9,18 @@ function map(array, funct) {
 }
 
 function reduce(array, funct, startValue) {
-    startValue = startValue || 0
-    for (const el of array) {
-        startValue = funct(el, startValue)
+    let iValue
+
+    if (startValue === undefined) {
+        iValue = 1
+    } else {
+        iValue = 0}
+
+    startValue = startValue || array[0]
+
+    for (let i = iValue; i<array.length; i++) {
+        startValue = funct(array[i], startValue)
     }
     return startValue
 }
 
-sourceArray = [1, 2, true, "razmatazz"]
-
-console.log(reduce(sourceArray, function(a, memo){ return !!a && !!memo}))
