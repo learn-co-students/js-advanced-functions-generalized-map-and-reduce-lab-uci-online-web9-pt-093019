@@ -8,7 +8,8 @@ function map(array, funct) {
     return returnArry
 }
 
-function reduce(array, funct, startValue=0) {
+function reduce(array, funct, startValue) {
+    startValue = startValue || 0
     for (const el of array) {
         startValue = funct(el, startValue)
     }
