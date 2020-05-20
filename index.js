@@ -9,16 +9,11 @@ function map(array, funct) {
 }
 
 function reduce(array, funct, startValue) {
-    let iValue
-
-    if (startValue === undefined) {
-        iValue = 1
-    } else {
-        iValue = 0}
+    let i = startValue === undefined ? 1 : 0
 
     startValue = startValue || array[0]
 
-    for (let i = iValue; i<array.length; i++) {
+    for (i; i<array.length; i++) {
         startValue = funct(array[i], startValue)
     }
     return startValue
